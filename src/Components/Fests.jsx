@@ -1,6 +1,4 @@
 
-
-
 import dance from "../assets/dancing.webp";
 import drama from "../assets/drama.webp";
 import singing from "../assets/singing.webp";

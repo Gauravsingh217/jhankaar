@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+const Fests = lazy(() => import('./Components/Fests'));
 import Hero from './Components/Hero';
 import Description from './Components/Description';
-import Fests from './Components/Fests';
 import Footer from './Components/Footer';
 import End from './Components/End';
 
@@ -14,7 +14,9 @@ function App() {
   <div className='overflow-x-hidden'>
     <Hero/>
     <Description/>
-    <Fests/>
+    <Suspense fallback={<div className="text-white text-center">Loading Fests...</div>}>
+  <Fests />
+</Suspense>
     <Footer/>
     <End/>
     </div>
