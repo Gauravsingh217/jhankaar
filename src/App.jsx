@@ -14,9 +14,16 @@ function App() {
   <div className='overflow-x-hidden'>
     <Hero/>
     <Description/>
-    <Suspense fallback={<div className="text-white text-center">Loading Fests...</div>}>
+    <Suspense
+   fallback={
+    <div className="w-full min-h-[300px] flex items-center justify-center bg-gray-900">
+      <div className="w-3/4 h-48 bg-gray-700 animate-pulse rounded-lg"></div>
+    </div>
+  }
+>
   <Fests />
 </Suspense>
+
     <Footer/>
     <End/>
     </div>
