@@ -1,12 +1,12 @@
 
 
 
-import dance from "../assets/dancing.jpg";
-import drama from "../assets/drama.jpg";
-import singing from "../assets/singing.jpg";
-import standup from "../assets/standup.jpg";
-import fashionShow from "../assets/fashionShow.jpg";
-import Mr from "../assets/Mr-Mrs.jpg";
+import dance from "../assets/dancing.webp";
+import drama from "../assets/drama.webp";
+import singing from "../assets/singing.webp";
+import standup from "../assets/standup.webp";
+import fashionShow from "../assets/fashionShow.webp";
+import Mr from "../assets/Mr-Mrs.webp";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";

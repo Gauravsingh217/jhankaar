@@ -1,6 +1,6 @@
 
 
-import video from '../assets/hero.mp4';
+import video from '../assets/hero.webm';
 
 export default function Hero() {
   return (
