@@ -116,7 +116,7 @@ export default function Description() {
   ];
 
   return (
-    <section className="w-full py-20 text-white" id="about">
+    <section className="w-full py-10 text-white" id="about">
       <div className="max-w-6xl mx-auto px-4">
         <h2
           className="text-4xl text-center mb-4 text-heading font-baskerville 
@@ -149,13 +149,17 @@ export default function Description() {
           ))}
         </div>
 
-        <div className="mt-12 text-center" data-aos="fade-up">
+        <div className="mt-12 text-center flex flex-col gap-3 w-fit mx-auto" data-aos="fade-up">
           <button
             onClick={() => navigate("/celebration")}
             className="inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-500 font-playfair"
           >
             Join the Celebration
           </button>
+        </div>
+
+        <div className="mt-12 text-center flex flex-col gap-3 w-fit mx-auto" data-aos="fade-up">
+          <button  className="inline-block bg-gradient-to-r from-pink-500 to-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-500 font-playfair">Admin Login</button>
         </div>
       </div>
     </section>
