@@ -55,6 +55,10 @@ import Description from './Components/Description';
 import Footer from './Components/Footer';
 import End from './Components/End';
 import CelebrationForm from './Signup/CelebrationForm';
+import AdminLogin from './Signup/AdminLogin';
+import AdminSignup from './Signup/AdminSignup';
+import StudentDashboard from './Signup/StudentDashboard';
+
 
 const Fests = lazy(() => import('./Components/Fests'));
 
@@ -80,11 +84,15 @@ function App() {
                 </Suspense>
                 <Footer />
                 <End />
+                
               </>
             }
           />
           {/* Removed PhoneAuth route */}
           <Route path="/celebration" element={<CelebrationForm />} />
+          <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/adminsignup" element={<AdminSignup />} />
+          <Route path="/studentdashboard" element={<StudentDashboard />} />
         </Routes>
       </div>
     </Router>

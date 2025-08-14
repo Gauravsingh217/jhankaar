@@ -1,12 +1,13 @@
 
+
+
+
 // export default CelebrationForm;
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const CelebrationForm = () => {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,13 +24,14 @@ const CelebrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log('handleSubmit triggered');
+
     try {
       await axios.post(
-         `${import.meta.env.VITE_API_BASE_URL}/api/participant/register`,
-  formData
+        `${import.meta.env.VITE_API_BASE_URL}/api/participant/register`,
+        formData
       );
       alert(`Thanks For Joining, ${formData.name}! 🎉`);
-      navigate('/ThankYou');
     } catch (error) {
       console.error('Error:', error.response?.data || error.message);
       alert('Something went wrong. Please try again.');
@@ -59,7 +61,9 @@ const CelebrationForm = () => {
           </div>
 
           <div className="col-span-1">
-            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">Email Id</label>
+            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">
+              Email Id
+            </label>
             <input
               type="email"
               name="email"
@@ -72,7 +76,9 @@ const CelebrationForm = () => {
           </div>
 
           <div>
-            <label className="block mb-1 font-baskerville text-sm text-white bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">Class</label>
+            <label className="block mb-1 font-baskerville text-sm text-white bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">
+              Class
+            </label>
             <select
               name="class"
               value={formData.class}
@@ -80,7 +86,9 @@ const CelebrationForm = () => {
               onChange={handleChange}
               required
             >
-              <option value="" disabled>Select Your Class</option>
+              <option value="" disabled>
+                Select Your Class
+              </option>
               <option value="FYBSC(CS-A)">FYBSC(CS-A)</option>
               <option value="FYBSC(CS-B)">FYBSC(CS-B)</option>
               <option value="FYBSC(CS-C)">FYBSC(CS-C)</option>
@@ -121,7 +129,9 @@ const CelebrationForm = () => {
           </div>
 
           <div className="col-span-1">
-            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">Mobile Number</label>
+            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">
+              Mobile Number
+            </label>
             <input
               type="tel"
               name="mobileno"
@@ -134,7 +144,9 @@ const CelebrationForm = () => {
           </div>
 
           <div className="col-span-1 sm:col-span-2">
-            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">Event</label>
+            <label className="block mb-1 font-baskerville bg-gradient-to-r from-[#f9e0ae] via-[#f7b267] to-[#d864a9] bg-clip-text text-transparent">
+              Event
+            </label>
             <select
               name="event"
               className="w-full p-2 border border-gray-400 rounded"
@@ -142,7 +154,9 @@ const CelebrationForm = () => {
               value={formData.event}
               required
             >
-              <option value="" disabled>Choose Event Participation</option>
+              <option value="" disabled>
+                Choose Event Participation
+              </option>
               <option value="Dance">Dance</option>
               <option value="Singing">Singing</option>
               <option value="Drama">Drama</option>

@@ -6,8 +6,6 @@ import standup from "../assets/standup.webp";
 import fashionShow from "../assets/fashionShow.webp";
 import Mr from "../assets/Mr-Mrs.webp";
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const events = [
   {
@@ -55,15 +53,13 @@ const events = [
 ];
 
 export default function Fests() {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  
 
   return (
     <section className=" text-white py-20 px-4 md:px-16">
       <h2
         className="text-4xl md:text-5xl font-bold text-center mb-16 font-cormorant text-dance"
-        data-aos="fade-up"
+       
       >
         Where Talent Meets Stage
       </h2>
@@ -75,8 +71,8 @@ export default function Fests() {
             className={`flex flex-col md:flex-row items-center gap-4 ${
               index % 2 !== 0 ? "md:flex-row-reverse" : ""
             }`}
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
+           
+            // data-aos-delay={index * 100}
           >
             <div className="w-full md:w-1/2 h-80 flex items-center justify-center">
               <img
@@ -88,8 +84,7 @@ export default function Fests() {
 
             <div
               className="w-full md:w-1/2 text-center md:text-left font-cormorant text-drama"
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-              data-aos-delay={index * 100}
+             
             >
               <h3 className="text-2xl md:text-3xl font-semibold mb-3">
                 {event.title}
