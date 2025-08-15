@@ -21,22 +21,36 @@ const CelebrationForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  
+  const handleSubmit = (e) => {
+  e.preventDefault();
 
-    console.log('handleSubmit triggered');
+  // ✅ Show alert immediately
+  alert(`Thanks For Joining, ${formData.name}! 🎉`);
 
-    try {
-      await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL}/api/participant/register`,
-        formData
-      );
-      alert(`Thanks For Joining, ${formData.name}! 🎉`);
-    } catch (error) {
-      console.error('Error:', error.response?.data || error.message);
-      alert('Something went wrong. Please try again.');
-    }
-  };
+  // ✅ Send data in the background
+  axios.post(
+    `${import.meta.env.VITE_API_BASE_URL}/api/participant/register`,
+    formData
+  )
+  .then(() => {
+    console.log("Data successfully sent to backend");
+  })
+  .catch((error) => {
+    console.error("Error:", error.response?.data || error.message);
+    alert("⚠️ Something went wrong. Please try again.");
+  });
+
+  // ✅ Optionally reset form instantly
+  setFormData({
+    name: '',
+    email: '',
+    class: '',
+    mobileno: '',
+    event: '',
+  });
+};
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-#0D0B1F px-4">
