@@ -19,7 +19,7 @@ export default function StudentDashboard() {
   const Card = ({ event }) => (
     <div
       onClick={() => handleCardClick(event.id)}
-      className="bg-gradient-to-br from-[#2c003e] via-[#3b0a58] to-[#1a1a1a] p-4 rounded-lg shadow-md cursor-pointer w-48 h-48 flex flex-col items-center justify-center
+      className="bg-gradient-to-br from-[#2c003e] via-[#3b0a58] to-[#1a1a1a] p-4 rounded-lg shadow-md cursor-pointer  w-38 h-38 sm:w-44 sm:h-44 md:w-48 md:h-48  flex flex-col items-center justify-center
                   hover:shadow-[0_0_20px_rgba(236,72,153,0.7)]
                  transition-all duration-300 ease-out"
     >
@@ -30,7 +30,7 @@ export default function StudentDashboard() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0D0B1F] text-black font-baskerville">
+    <div className="flex flex-col min-h-screen  text-black font-baskerville">
       {/* Sticky Header */}
       <div className="sticky top-0 w-full bg-gradient-to-br from-[#2c003e] via-[#3b0a58] to-[#1a1a1a] text-heading  p-4 text-center  font-cormorant font-medium text-3xl z-50 shadow-lg">
         Student Information
@@ -38,20 +38,20 @@ export default function StudentDashboard() {
       
 
       {/* Cards Section */}
-      <div className="flex-1 flex flex-col items-center justify-center text-white p-6 gap-6">
+      <div className="flex-1 flex flex-col items-center justify-center text-white p-6 ">
         {/* First row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.slice(0, 3).map((event) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
+          {events.slice(0, 5).map((event) => (
             <Card key={event.id} event={event} />
           ))}
         </div>
 
         {/* Second row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 lg:flex lg:justify-center">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 lg:flex lg:justify-center">
           {events.slice(3, 5).map((event) => (
             <Card key={event.id} event={event} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
